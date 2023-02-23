@@ -13,7 +13,7 @@ public class FilmInMemoryAdapter implements FilmPersistencePort {
     @Override
     public Film getFilmById(int filmId) {
         filmMap.put(1, new Film());
-
+        System.out.println("repo " + filmId);
         return filmMap.get(filmId);
     }
 }

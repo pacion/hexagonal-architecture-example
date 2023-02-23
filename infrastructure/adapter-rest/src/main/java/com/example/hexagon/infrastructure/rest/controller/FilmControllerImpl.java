@@ -1,4 +1,4 @@
-package main.java.com.example.hexagon.infrastructure.rest.controller;
+package com.example.hexagon.infrastructure.rest.controller;
 
 import com.example.hexagon.application.service.api.FilmService;
 import com.example.hexagon.domain.model.Film;
@@ -16,7 +16,8 @@ public class FilmControllerImpl implements FilmController {
     }
 
     @Override
-    public Film getFilmById(Integer filmId) {
-        return filmService.getFilmById(1);
+    public Film getFilmById(int filmId) {
+        System.out.println("controller " + filmId);
+        return filmService.getFilmById(filmId);
     }
 }

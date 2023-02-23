@@ -16,7 +16,7 @@ public class FilmServiceAdapter implements FilmService {
 
     @Override
     public Film getFilmById(int filmId) {
-        return new Film();
-        //return filmPersistencePort.getFilmById(filmId);
+        System.out.println("getfilmById" + filmId);
+        return filmPersistencePort.getFilmById(filmId);
     }
 }
