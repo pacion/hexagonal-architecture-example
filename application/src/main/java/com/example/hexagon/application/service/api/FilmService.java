@@ -1,5 +1,7 @@
 package com.example.hexagon.application.service.api;
 
-public interface FilmService {
+import com.example.hexagon.domain.model.Film;
 
+public interface FilmService {
+    Film getFilmById(int filmId);
 }

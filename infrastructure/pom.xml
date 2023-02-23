@@ -17,6 +17,7 @@
 
     <modules>
         <module>adapter-persistence-in-memory</module>
+        <module>adapter-rest</module>
     </modules>
 
 </project>
