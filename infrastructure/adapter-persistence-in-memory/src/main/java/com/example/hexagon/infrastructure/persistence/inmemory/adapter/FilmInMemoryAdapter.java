@@ -3,7 +3,9 @@ package com.example.hexagon.infrastructure.persistence.inmemory.adapter;
 import com.example.hexagon.domain.model.Film;
 import com.example.hexagon.domain.spi.FilmPersistencePort;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class FilmInMemoryAdapter implements FilmPersistencePort {
@@ -12,8 +14,21 @@ public class FilmInMemoryAdapter implements FilmPersistencePort {
 
     @Override
     public Film getFilmById(int filmId) {
-        filmMap.put(1, new Film());
-        System.out.println("repo " + filmId);
         return filmMap.get(filmId);
+    }
+
+    @Override
+    public void addFilm(Film film) {
+        filmMap.put(film.id(), film);
+    }
+
+    @Override
+    public void removeFilm(Film film) {
+        filmMap.remove(film.id());
+    }
+
+    @Override
+    public List<Film> getFilms() {
+        return new ArrayList<>(filmMap.values());
     }
 }
