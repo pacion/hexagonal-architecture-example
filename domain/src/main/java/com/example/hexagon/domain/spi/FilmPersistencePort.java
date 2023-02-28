@@ -9,7 +9,7 @@ public interface FilmPersistencePort {
 
     void addFilm(Film film);
 
-    void removeFilm(Film film);
+    void removeFilmBy(int filmId);
 
     List<Film> getFilms();
 }

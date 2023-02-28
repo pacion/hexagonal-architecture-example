@@ -23,8 +23,8 @@ public class FilmInMemoryAdapter implements FilmPersistencePort {
     }
 
     @Override
-    public void removeFilm(Film film) {
-        filmMap.remove(film.id());
+    public void removeFilmBy(int filmId) {
+        filmMap.remove(filmId);
     }
 
     @Override

@@ -5,6 +5,8 @@ import com.example.hexagon.domain.model.Film;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class FilmControllerImpl implements FilmController {
 
@@ -17,7 +19,21 @@ public class FilmControllerImpl implements FilmController {
 
     @Override
     public Film getFilmById(int filmId) {
-        System.out.println("controller " + filmId);
-        return filmService.getFilmById(filmId);
+        return filmService.getFilmBy(filmId);
+    }
+
+    @Override
+    public List<Film> getFilms() {
+        return filmService.getFilms();
+    }
+
+    @Override
+    public void deleteFilmBy(int filmId) {
+        filmService.removeFilmBy(filmId);
+    }
+
+    @Override
+    public void addFilm(Film film) {
+        filmService.addFilm(film);
     }
 }

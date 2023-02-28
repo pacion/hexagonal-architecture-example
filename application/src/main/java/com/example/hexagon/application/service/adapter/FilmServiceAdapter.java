@@ -5,6 +5,8 @@ import com.example.hexagon.domain.model.Film;
 import com.example.hexagon.domain.spi.FilmPersistencePort;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+
 public class FilmServiceAdapter implements FilmService {
 
     private final FilmPersistencePort filmPersistencePort;
@@ -15,8 +17,22 @@ public class FilmServiceAdapter implements FilmService {
     }
 
     @Override
-    public Film getFilmById(int filmId) {
-        System.out.println("getfilmById" + filmId);
+    public Film getFilmBy(int filmId) {
         return filmPersistencePort.getFilmById(filmId);
+    }
+
+    @Override
+    public void addFilm(Film film) {
+        filmPersistencePort.addFilm(film);
+    }
+
+    @Override
+    public void removeFilmBy(int filmId) {
+        filmPersistencePort.removeFilmBy(filmId);
+    }
+
+    @Override
+    public List<Film> getFilms() {
+        return filmPersistencePort.getFilms();
     }
 }
