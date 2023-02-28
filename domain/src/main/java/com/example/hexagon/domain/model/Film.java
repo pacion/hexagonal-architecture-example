@@ -1,4 +1,4 @@
 package com.example.hexagon.domain.model;
 
-public record Film(int id) {
+public record Film(int id, String author) {
 }
